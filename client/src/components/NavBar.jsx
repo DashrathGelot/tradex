@@ -5,9 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
 
-export default function NavBar() {
+export default function NavBar({user, logout}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -19,12 +19,19 @@ export default function NavBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <QueryStatsIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            TradeX
           </Typography>
-          <Button color="inherit">Login</Button>
+          { user && 
+            <>
+              <Typography variant="h6" component="div" style={{paddingRight: 10}}>
+                {user}
+              </Typography>
+              <Button onClick={logout} color="primary" variant="contained">Log Out</Button>
+            </>
+          }
         </Toolbar>
       </AppBar>
     </Box>

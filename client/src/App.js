@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Login from './components/Login';
+import NavBar from './components/NavBar';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Signup from './components/Signup';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import { logout } from './services/loginService';
+import { Container } from '@mui/material';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
+
+const PrivateRoute = ({ children }) => {
+  if (localStorage.getItem("user")) {
+    return children;
+  }
+  return <Login/>;
 }
 
-export default App;
+export default function App() {
+  const navigate = useNavigate();
+  const user = localStorage.getItem("user");
+
+  const handleLogout = async () => {
+    logout().then(() => {
+      localStorage.removeItem("user");
+      navigate('/login');
+    }).catch(e => {
+      alert("Retry!!");
+    });
+  }
+
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  },[user, navigate]);
+
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <header>
+        <NavBar logout={handleLogout} user={user}/>
+      </header>
+      <Container style={{maxWidth: '100%', marginTop: 15}}>
+        <Routes>
+          <Route path='/login' element={ <Login/> } />
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/dashboard' element={
+            <PrivateRoute>
+              <Dashboard/>
+            </PrivateRoute>
+          }/>
+        </Routes>
+      </Container>
+    </ThemeProvider>
+  );
+}
