@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddlAuto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/tradex
+    username: root
+    password: dashtradex
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+stock:
+  api: https://financialmodelingprep.com/api/v3
+  api_key: 754d9b53423c5d81aab031163e875338
