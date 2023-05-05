@@ -11,3 +11,6 @@ spring:
 stock:
   api: https://financialmodelingprep.com/api/v3
   api_key: 754d9b53423c5d81aab031163e875338
+  websocket:
+    URL: wss://ws.finnhub.io/?token=
+    token: cha0iq1r01qhe0r9p1t0cha0iq1r01qhe0r9p1tg
