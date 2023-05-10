@@ -4,6 +4,7 @@ import com.example.tradex_watchlist.model.Company;
 import com.example.tradex_watchlist.services.StockServices;
 import com.example.tradex_watchlist.services.WatchListServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class WatchListRest {
     StockServices stockSerivces;
 
     @GetMapping("/companies")
+    @CrossOrigin
     public List<Company> getCompanies() {
         return watchListServices.getCompanies();
     }

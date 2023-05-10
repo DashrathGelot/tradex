@@ -1,49 +1,47 @@
 package com.example.tradex_watchlist.model;
 
 public class TradeData {
-    private String p;
+    private double p;
     private String s;
-    private String t;
-    private String v;
-
+    private long t;
+    private long v;
     public TradeData() {}
-
-    public TradeData(String p, String s, String t, String v) {
+    public TradeData(double p, String s, long t, long v) {
         this.p = p;
         this.s = s;
         this.t = t;
         this.v = v;
     }
 
-    public String getP() {
+    public double getP() {
         return p;
+    }
+
+    public void setP(double p) {
+        this.p = p;
     }
 
     public String getS() {
         return s;
     }
 
-    public String getT() {
-        return t;
-    }
-
-    public String getV() {
-        return v;
-    }
-
-    public void setP(String p) {
-        this.p = p;
-    }
-
     public void setS(String s) {
         this.s = s;
     }
 
-    public void setT(String t) {
+    public long getT() {
+        return t;
+    }
+
+    public void setT(long t) {
         this.t = t;
     }
 
-    public void setV(String v) {
+    public long getV() {
+        return v;
+    }
+
+    public void setV(long v) {
         this.v = v;
     }
 

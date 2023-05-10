@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" modified="2023-05-06T18:27:00.994Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="YnMYJuqxNLLWSQisXByb" version="21.2.9" type="device">
+  <diagram name="Page-1" id="NaQZAUKGYjp1-yQnT1Hw">
+    <mxGraphModel dx="1712" dy="888" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-1" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;Stock Exchange Service&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="940" y="160" width="160" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-2" value="Tradex" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="190" y="40" width="610" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-7" value="User Profile - Ruby on Rails Micro Services&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-2" vertex="1">
+          <mxGeometry x="130" y="40" width="460" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="JtF-ZKzIydX54R-fezbd-2" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;Save user in session&lt;br&gt;used authentication with hash stored password&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="QNNVIjiULaWiR0FSrFsQ-7">
+          <mxGeometry x="280" y="40" width="130" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-8" value="WatchList - Java Micro Services" style="swimlane;whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-2" vertex="1">
+          <mxGeometry x="120" y="280" width="470" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="QNNVIjiULaWiR0FSrFsQ-8" source="QNNVIjiULaWiR0FSrFsQ-21" target="QNNVIjiULaWiR0FSrFsQ-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="113" />
+              <mxPoint x="210" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-21" value="Global Cache&lt;br&gt;(Look UP)&lt;br&gt;&lt;br&gt;AAPL&amp;nbsp;&lt;br&gt;MSFT&lt;br&gt;META" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="QNNVIjiULaWiR0FSrFsQ-8" vertex="1">
+          <mxGeometry x="350" y="30" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="QNNVIjiULaWiR0FSrFsQ-8" source="QNNVIjiULaWiR0FSrFsQ-25" target="QNNVIjiULaWiR0FSrFsQ-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-25" value="Stock Services&lt;br&gt;&lt;br&gt;open websocket and send company symbol" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-8" vertex="1">
+          <mxGeometry x="360" y="180" width="90" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-28" value="Controller" style="swimlane;whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-8" vertex="1">
+          <mxGeometry x="20" y="80" width="140" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-29" value="look in cache" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-28" vertex="1">
+          <mxGeometry x="20" y="40" width="110" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-31" value="Exist in cache" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-28" vertex="1">
+          <mxGeometry x="20" y="100" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-34" value="go for stock E service" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-28" vertex="1">
+          <mxGeometry x="20" y="150" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="QNNVIjiULaWiR0FSrFsQ-8" source="QNNVIjiULaWiR0FSrFsQ-29" target="QNNVIjiULaWiR0FSrFsQ-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="120" />
+              <mxPoint x="200" y="120" />
+              <mxPoint x="200" y="85" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.818;entryDx=0;entryDy=0;entryPerimeter=0;" parent="QNNVIjiULaWiR0FSrFsQ-8" source="QNNVIjiULaWiR0FSrFsQ-35" target="QNNVIjiULaWiR0FSrFsQ-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.025;entryY=0.117;entryDx=0;entryDy=0;entryPerimeter=0;" parent="QNNVIjiULaWiR0FSrFsQ-8" source="QNNVIjiULaWiR0FSrFsQ-35" target="QNNVIjiULaWiR0FSrFsQ-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-35" value="get stock stream&lt;br&gt;put into global cache&lt;br&gt;return stock stream" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-8" vertex="1">
+          <mxGeometry x="200" y="210" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="QNNVIjiULaWiR0FSrFsQ-8" source="QNNVIjiULaWiR0FSrFsQ-34" target="QNNVIjiULaWiR0FSrFsQ-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-10" value="&lt;b&gt;Websocket&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="810" y="490" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-11" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;1. User&lt;br&gt;-login&lt;br&gt;-signup&lt;br&gt;&lt;br&gt;2. favorites&lt;br&gt;- add stock to watch list&lt;/b&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="110" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-13" value="Client" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-110" y="160" width="210" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-17" value="Sign up&amp;nbsp;&lt;br&gt;Sign in&lt;br&gt;add to watch list&amp;nbsp;&lt;br&gt;notificaton" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-13" vertex="1">
+          <mxGeometry x="40" y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-19" value="show real-time stock update&lt;br&gt;get company qoute" style="whiteSpace=wrap;html=1;" parent="QNNVIjiULaWiR0FSrFsQ-13" vertex="1">
+          <mxGeometry x="40" y="150" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="QNNVIjiULaWiR0FSrFsQ-17" target="QNNVIjiULaWiR0FSrFsQ-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="QNNVIjiULaWiR0FSrFsQ-19" target="QNNVIjiULaWiR0FSrFsQ-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="QNNVIjiULaWiR0FSrFsQ-8" target="QNNVIjiULaWiR0FSrFsQ-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-24" value="SSE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="215" y="458" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="QNNVIjiULaWiR0FSrFsQ-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QNNVIjiULaWiR0FSrFsQ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="QNNVIjiULaWiR0FSrFsQ-25" target="QNNVIjiULaWiR0FSrFsQ-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

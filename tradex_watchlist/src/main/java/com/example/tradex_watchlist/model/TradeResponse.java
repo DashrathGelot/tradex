@@ -11,8 +11,8 @@ public class TradeResponse {
 
     public TradeResponse() {}
 
-    public TradeResponse(List<TradeData> tradeData, String type) {
-        this.data = tradeData;
+    public TradeResponse(List<TradeData> data, String type) {
+        this.data = data;
         this.type = type;
     }
 
@@ -35,7 +35,7 @@ public class TradeResponse {
     @Override
     public String toString() {
         return "TradeResponse{" +
-                "tradeData=" + data +
+                "data=" + data +
                 ", type='" + type + '\'' +
                 '}';
     }

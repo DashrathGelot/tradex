@@ -16,13 +16,14 @@ public class TradexClient {
     private String token;
     @Bean
     public WebSocketConnectionManager webSocketConnectionManager() {
-        WebSocketConnectionManager manager = new WebSocketConnectionManager(
-                webSocketClient(),
-                webSocketHandler(),
-                URL + token
-        );
+        WebSocketConnectionManager manager = new WebSocketConnectionManager(webSocketClient(), webSocketHandler(), URL + token);
         manager.setAutoStartup(true);
         return manager;
+    }
+
+//    @Bean
+    public WebSocketConnectionManager webSocketConnectionManager(WebSocketHandler webSocketHandler) {
+        return new WebSocketConnectionManager(webSocketClient(), webSocketHandler, URL + token);
     }
     @Bean
     public WebSocketClient webSocketClient() {

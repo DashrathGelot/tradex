@@ -1,84 +1,48 @@
-import React, { PureComponent } from "react";
-import { Paper } from "@mui/material";
+import React from "react";
+import { Box, Paper } from "@mui/material";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
-class Example extends PureComponent {
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-      </ResponsiveContainer>
-    );
+export default function Stock({data, symbol, onClick}) {
+  const getT = (unixTimestamp) => {
+    return new Date(unixTimestamp).toUTCString().slice(-11, -4);
   }
-}
 
-export default function Stock() {
-    return (
-        <Paper style={{width: '100%', height: 500, padding: 30}}>
-            <Example/>
-        </Paper>
-    );
+  return (
+    <Paper onClick={onClick} style={{width: '97%', height: '70vh', padding: 20}}>
+      <center><h1 style={{marginTop: 0}}>{symbol}</h1></center> 
+      <Box style={{width: '100%', height: '85%'}}>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart
+            width={500}
+            height={300}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis 
+              dataKey="t" 
+              tickCount={10} 
+              tickFormatter={(value) => getT(value)}
+            />
+            <YAxis 
+              dataKey="p" 
+              tickFormatter={(value) => value.toFixed(2)} 
+              allowDecimals={true} 
+              domain={['dataMin', 'auto']}
+              tickCount={10}
+              activeDot={{ r: 8 }}
+            />
+            <Tooltip />
+            <Legend />
+            <Line dot={false} type="monotone" dataKey="p" stroke="#8884d8"/>
+          </LineChart>
+        </ResponsiveContainer>
+      </Box>
+    </Paper>
+  );
 }

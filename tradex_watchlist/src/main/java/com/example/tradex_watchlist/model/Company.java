@@ -19,6 +19,10 @@ public class Company {
         this.headQuarter = location;
     }
 
+    public Company(String symbol) {
+        this.symbol = symbol;
+    }
+
     public Company(JSONObject jsonObject) throws JSONException {
         this.name = jsonObject.getString("name");
         this.symbol = jsonObject.getString("symbol");

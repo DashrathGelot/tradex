@@ -41,15 +41,16 @@ export default function App() {
     if (user) {
       navigate('/dashboard');
     }
-  },[user, navigate]);
+  },[user]);
 
   return (
     <ThemeProvider theme={darkTheme}>
       <header>
         <NavBar logout={handleLogout} user={user}/>
       </header>
-      <Container style={{maxWidth: '100%', marginTop: 15}}>
+      <Container style={{maxWidth: '100%', marginTop: 10}}>
         <Routes>
+          <Route path='/' element={ <Login/> } />
           <Route path='/login' element={ <Login/> } />
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/dashboard' element={
